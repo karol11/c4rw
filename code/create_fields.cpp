@@ -2,8 +2,8 @@
 
 namespace robot {
 
-	void robot_main() {
-		make_field(3, {
+	void robotMain() {
+		makeField(3, {
 			".                .",
 			"                  ",
 			"    Hello there   ",
@@ -17,8 +17,8 @@ namespace robot {
 			"     *   #   *    ",
 			"    0123456789    ",
 			".                ."});
-		save_field("demo.field");
-		make_field(2, {
+		saveField("demo.field");
+		makeField(2, {
 			"                  ",
 			"   ####      #    ",
 			"      #      #    ",
@@ -32,8 +32,8 @@ namespace robot {
 			"  #      #        ",
 			"  #      #####    ",
 			"* #             @ " });
-		save_field("labytinth.field");
-		make_field(0, {
+		saveField("labytinth.field");
+		makeField(0, {
 			"          >     _ ",
 			"                  ",
 			"  _           <   ",
@@ -47,8 +47,8 @@ namespace robot {
 			"  >         *     ",
 			">              ^  ",
 			"                  " });
-		save_field("arrows.field");
-		make_field(3, {
+		saveField("arrows.field");
+		makeField(3, {
 			"                  ",
 			"  .   .     .  .  ",
 			"       .    .  .  ",
@@ -62,8 +62,8 @@ namespace robot {
 			"             .  . ",
 			"    ...    ...  . ",
 			"                  " });
-		save_field("grass.field");
-		make_field(3, {
+		saveField("grass.field");
+		makeField(3, {
 			" 48  10   33      ",
 			"                  ",
 			"                  ",
@@ -77,8 +77,8 @@ namespace robot {
 			"            x     ",
 			"                  ",
 			"                  " });
-		save_field("numbers.field");
-		make_field(0, {
+		saveField("numbers.field");
+		makeField(0, {
 			"This land is      ",
 			"your land         ",
 			"and this land     ",
@@ -92,6 +92,6 @@ namespace robot {
 			"This land         ",
 			"was made          ",
 			"for you and me   @" });
-		save_field("text.field");
+		saveField("text.field");
 	}
 }

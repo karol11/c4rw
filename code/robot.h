@@ -27,9 +27,9 @@ namespace robot {
 	char getChar();
 	void clearChar();
 
-	void save_field(const char* file_name);
-	void load_field(const char* file_name);
-	void make_field(int dir, std::initializer_list<char*> field);
+	void saveField(const char* file_name);
+	void loadField(const char* file_name);
+	void makeField(int dir, std::initializer_list<char*> field);
 } // namespace robot
 
 #endif // ROBOT_H_

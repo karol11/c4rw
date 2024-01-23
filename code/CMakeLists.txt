@@ -15,11 +15,11 @@ target_link_libraries(robot PUBLIC SDL2::SDL2 SDL2_image::SDL2_image)
 add_executable(create_fields create_fields.cpp)
 target_link_libraries(create_fields robot)
 
-add_executable(task1 task1_series_of_commands.cpp)
-target_link_libraries(task1 robot)
+add_executable(task1_commands task1_commands.cpp)
+target_link_libraries(task1_commands robot)
 
-add_executable(task2 task2_make_your_own_commands.cpp)
-target_link_libraries(task2 robot)
+add_executable(task2_create_commands task2_create_commands.cpp)
+target_link_libraries(task2_create_commands robot)
 
-add_executable(task3 task3_change_the_order_of_commands.cpp)
-target_link_libraries(task3 robot)
+add_executable(task3_goto task3_goto.cpp)
+target_link_libraries(task3_goto robot)

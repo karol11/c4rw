@@ -2,21 +2,21 @@
 
 namespace robot {
 
-	void walk_to_wall() {
+	void walkToWall() {
 	start:
 		if (isAtWall()) goto end;
 		step();
 		goto start;
 	end:;
 	}
-	void turn_around() {
+	void turnAround() {
 		turnCw();
 		turnCw();
 	}
 
-	void robot_main() {
-	a0: walk_to_wall();
-		turn_around();
+	void robotMain() {
+	a0: walkToWall();
+		turnAround();
 		goto a0;
 	}
 }

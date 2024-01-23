@@ -114,7 +114,7 @@ namespace robot {
 				pxY = y * CELL_SIZE;
 				redraw();
 			}
-			void draw_char(unsigned int c, int x, int y) {
+			void drawChar(unsigned int c, int x, int y) {
 				if (c < ' ' || c > 0x7f)
 					return;
 				c -= ' ';
@@ -137,7 +137,7 @@ namespace robot {
 							sprites.blt(CELL_SIZE / 2, 0, x * CELL_SIZE + CELL_SIZE / 2, y * CELL_SIZE, CELL_SIZE / 2, CELL_SIZE / 2);
 						if (f & F_ARROWS)
 							sprites.bltRotate(CELL_SIZE / 2, CELL_SIZE / 2, x * CELL_SIZE, y * CELL_SIZE + CELL_SIZE / 2, CELL_SIZE / 2, CELL_SIZE / 2, ((f >> F_ARROWS_SHIFT) & 3) * 90);
-						draw_char(f & 0xff, x * CELL_SIZE + (CELL_SIZE - CHAR_WIDTH), y * CELL_SIZE);
+						drawChar(f & 0xff, x * CELL_SIZE + (CELL_SIZE - CHAR_WIDTH), y * CELL_SIZE);
 					}
 				}
 				if (!hide_counter)
@@ -169,9 +169,9 @@ namespace robot {
 			}
 			void error(std::string message) {
 				std::cout << "Error: ";
-				quit_with_message(message);
+				quitWithMessage(message);
 			}
-			void quit_with_message(std::string message) {
+			void quitWithMessage(std::string message) {
 				std::cout << message << std::endl;
 				for (;;) {
 					redraw();
@@ -270,7 +270,7 @@ namespace robot {
 		scene.field[scene.x][scene.y] &= ~0xff;
 		scene.redraw();
 	}
-	void save_field(const char* file_name) {
+	void saveField(const char* file_name) {
 		std::ofstream f(file_name, std::ofstream::out | std::ofstream::binary);
 		auto putb = [&](char c) { f.write(&c, 1); };
 		putb(FIELD_WIDTH);
@@ -285,7 +285,7 @@ namespace robot {
 			}
 		}
 	}
-	void load_field(const char* file_name) {
+	void loadField(const char* file_name) {
 		std::ifstream f(file_name, std::ofstream::in | std::ofstream::binary);
 		auto getb = [&]() {
 			char c;
@@ -306,7 +306,7 @@ namespace robot {
 		scene.pxX = scene.x * CELL_SIZE;
 		scene.pxY = scene.y * CELL_SIZE;
 	}
-	void make_field(int dir, std::initializer_list<char*> field) {
+	void makeField(int dir, std::initializer_list<char*> field) {
 		memset(scene.field, 0, sizeof(scene.field));
 		scene.dir = dir;
 		int y = 0;
@@ -337,15 +337,15 @@ namespace robot {
 		}
 	}
 
-	void robot_main();
+	void robotMain();
 
 } // namespace robot
 
 using namespace robot;
 
 int main(int argc, char* argv[]) {
-	robot_main();
-	save_field("last.field");
-	scene.quit_with_message("Done");
+	robotMain();
+	saveField("last.field");
+	scene.quitWithMessage("Done");
 	return 0;
 }

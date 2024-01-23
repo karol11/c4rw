@@ -1,0 +1,20 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cmake",
+			"label": "build",
+			"command": "build",
+			"targets": [
+				"${fileBasenameNoExtension}"
+			],
+			"preset": "${command:cmake.activeBuildPresetName}",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"detail": "CMake build task"
+		}
+	]
+}
